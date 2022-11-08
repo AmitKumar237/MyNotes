@@ -14,6 +14,8 @@ public class HelloApplication extends Application {
         stage.setTitle("Login");
         stage.setScene(scene);
         stage.show();
+        JdbcConnection obj = new JdbcConnection();
+        obj.createConnection();
     }
 
     public static void main(String[] args) {

@@ -18,4 +18,9 @@ public class Login {
         Parent root=FXMLLoader.load(getClass().getResource("signup.fxml"));
         st.setScene(new Scene(root));
     }
+
+    public void onClick(ActionEvent actionEvent)
+    {
+
+    }
 }

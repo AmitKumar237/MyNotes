@@ -12,6 +12,14 @@
 
 <VBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="454.0" prefWidth="466.0" style="-fx-background-color: #151928;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mynotes.SignUp">
     <children>
+      <Label fx:id="errorMessage" contentDisplay="CENTER" textFill="#e80e19">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="10.0" left="20.0" />
+         </VBox.margin>
+      </Label>
         <Label text="Sign Up" textFill="#3350f2">
             <font>
                 <Font size="20.0" />
@@ -25,7 +33,7 @@
         </Label>
         <HBox alignment="CENTER_LEFT" blendMode="LIGHTEN" prefHeight="54.0" prefWidth="466.0" style="-fx-background-color: transparent;">
             <children>
-                <TextField promptText="Full Name" style="-fx-background-color: transparent; -fx-border-color: #DEDEE4; -fx-border-width: 0px 0px 1px 0px;">
+                <TextField fx:id="name" promptText="Full Name" style="-fx-background-color: transparent; -fx-border-color: #DEDEE4; -fx-border-width: 0px 0px 1px 0px;">
                     <effect>
                         <Bloom threshold="0.69" />
                     </effect>
@@ -40,7 +48,7 @@
         </HBox>
         <HBox alignment="CENTER_LEFT" blendMode="LIGHTEN" prefHeight="54.0" prefWidth="466.0" style="-fx-background-color: transparent;">
             <children>
-                <TextField prefHeight="26.0" prefWidth="155.0" promptText="User Id" style="-fx-background-color: transparent; -fx-border-color: #DEDEE4; -fx-border-width: 0px 0px 1px 0px;">
+                <TextField fx:id="id" prefHeight="26.0" prefWidth="155.0" promptText="User Id" style="-fx-background-color: transparent; -fx-border-color: #DEDEE4; -fx-border-width: 0px 0px 1px 0px;">
                     <effect>
                         <Bloom />
                     </effect>
@@ -58,7 +66,7 @@
             <Insets left="10.0" />
          </padding>
          <children>
-            <TextField prefHeight="26.0" prefWidth="158.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #DEDEE4; -fx-border-width: 0px 0px 1px 0px;">
+            <TextField fx:id="password" prefHeight="26.0" prefWidth="158.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #DEDEE4; -fx-border-width: 0px 0px 1px 0px;">
                <effect>
                   <Bloom />
                </effect>
@@ -68,7 +76,7 @@
             </TextField>
          </children>
       </HBox>
-      <Button fx:id="sign_up" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="393.0" style="-fx-background-color: #4e6df8;" text="Sign Up" textAlignment="CENTER">
+      <Button fx:id="signUp" alignment="CENTER" mnemonicParsing="false" onAction="#onClick" prefHeight="27.0" prefWidth="393.0" style="-fx-background-color: #4e6df8;" text="Sign Up" textAlignment="CENTER">
          <font>
             <Font size="13.0" />
          </font>

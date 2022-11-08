@@ -2,13 +2,20 @@ package com.example.mynotes;
 import java.util.*;
 import java.sql.*;
 
-public class JdbcConnection {
-public static  void main(String[] args)
+public class JdbcConnection
+{
+    public static Connection con;
+    public Connection getConection()
+    {
+        return con;
+    }
+
+public void createConnection()
 {
 try
 {
-   // Class.forName("com.mysql.cj.jdbc.Driver");
-    Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/note", "root", "tan@3006");
+   Class.forName("com.mysql.cj.jdbc.Driver");
+    con=DriverManager.getConnection("jdbc:mysql://localhost:3306/note", "root", "tan@3006");
     if(con.isClosed())
     {
         System.out.println("Connection is closed");
