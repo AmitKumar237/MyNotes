@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="454.0" prefWidth="466.0" style="-fx-background-color: #151928;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="454.0" prefWidth="466.0" style="-fx-background-color: #151928;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mynotes.SignUp">
     <children>
         <Label text="Sign Up" textFill="#3350f2">
             <font>
@@ -76,7 +76,7 @@
             <Insets left="30.0" right="15.0" top="20.0" />
          </VBox.margin>
       </Button>
-      <Hyperlink text="Already Registered ?" textFill="#fcfafa">
+      <Hyperlink fx:id="reg" onAction="#regListener" text="Already Registered ?" textFill="#fcfafa">
          <VBox.margin>
             <Insets left="325.0" top="25.0" />
          </VBox.margin>

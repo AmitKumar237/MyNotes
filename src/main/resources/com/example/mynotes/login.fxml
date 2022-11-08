@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="454.0" prefWidth="466.0" style="-fx-background-color: #151928;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="454.0" prefWidth="466.0" style="-fx-background-color: #151928;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mynotes.Login">
    <children>
       <Label text="Login" textFill="#4e6df8">
          <font>
@@ -53,7 +53,7 @@
             <Insets left="10.0" />
          </padding>
       </HBox>
-      <Button fx:id="sign_in" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="393.0" style="-fx-background-color: #4e6df8;" text="Sign In" textAlignment="CENTER" VBox.vgrow="ALWAYS">
+      <Button alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="393.0" style="-fx-background-color: #4e6df8;" text="Sign In" textAlignment="CENTER" VBox.vgrow="ALWAYS">
          <VBox.margin>
             <Insets left="30.0" right="15.0" top="20.0" />
          </VBox.margin>
@@ -61,7 +61,7 @@
             <Font size="13.0" />
          </font>
       </Button>
-      <Hyperlink text="New User?" textFill="#fcfafa">
+      <Hyperlink fx:id="newUser" onAction="#newListener" text="New User?" textFill="#fffdfd">
          <VBox.margin>
             <Insets left="350.0" top="25.0" />
          </VBox.margin>
