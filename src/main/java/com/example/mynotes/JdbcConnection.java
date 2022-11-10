@@ -15,7 +15,7 @@ public void createConnection()
 try
 {
    Class.forName("com.mysql.cj.jdbc.Driver");
-    con=DriverManager.getConnection("jdbc:mysql://localhost:3306/note", "root", "tan@3006");
+    con=DriverManager.getConnection("jdbc:mysql://localhost:3306/note", "admin", "amit2307");
     if(con.isClosed())
     {
         System.out.println("Connection is closed");
