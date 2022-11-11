@@ -37,14 +37,14 @@ public class Login {
             errorMessage.setText("No field should be empty!");
         }else{
             JdbcConnection obj = new JdbcConnection();
-            String q = "select userId,password from users";
+            String q = "select userId,password,name from users";
             try{
                 PreparedStatement ptsmt = obj.getConection().prepareStatement(q);
                 ResultSet set = ptsmt.executeQuery();
                 boolean flag = true;
                 while(set.next()){
                     if(set.getString(1).equals(userId) && set.getString(2).equals(userPassword)){
-                        //Redirecting to landingPage.
+                        //Redirecting to landingPage
                         flag = false;
                         Stage st=(Stage)id.getScene().getWindow();
                         Parent root=FXMLLoader.load(getClass().getResource("landingPage.fxml"));
