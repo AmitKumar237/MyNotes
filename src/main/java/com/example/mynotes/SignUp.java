@@ -49,6 +49,7 @@ public class SignUp {
 
 
              //Redirecting to landingPage.
+//             LandingPage obj1 = new LandingPage(userName);
              Stage st=(Stage)signUp.getScene().getWindow();
              Parent root=FXMLLoader.load(getClass().getResource("landingPage.fxml"));
              st.setScene(new Scene(root));
