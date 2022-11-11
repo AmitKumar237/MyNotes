@@ -3,6 +3,7 @@ package com.example.mynotes;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -47,12 +48,17 @@ public class SignUp {
              ptsmt.setString(3,userPassword);
              int tmp = ptsmt.executeUpdate();
 
+            //Redirecting to landingPage
+             FXMLLoader loader = new FXMLLoader(getClass().getResource("landingPage.fxml"));
+             Parent root = loader.load();
 
-             //Redirecting to landingPage.
-//             LandingPage obj1 = new LandingPage(userName);
-             Stage st=(Stage)signUp.getScene().getWindow();
-             Parent root=FXMLLoader.load(getClass().getResource("landingPage.fxml"));
-             st.setScene(new Scene(root));
+             LandingPage landingPage = loader.getController();
+             landingPage.setUserTitle(userName);
+
+             Stage st=(Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+             Scene scene = new Scene(root);
+             st.setScene(scene);
+             st.show();
          }
          catch(Exception e)
          {

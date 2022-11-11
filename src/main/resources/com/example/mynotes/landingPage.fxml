@@ -14,7 +14,7 @@
       </Button>
       <AnchorPane prefHeight="416.0" prefWidth="200.0" style="-fx-background-color: #151928;">
          <children>
-            <Label fx:id="userName" layoutX="64.0" layoutY="14.0" textFill="WHITE" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="25.0" />
+            <Label fx:id="userTitle" layoutX="64.0" layoutY="14.0" textFill="WHITE" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="25.0" />
             <ComboBox fx:id="filter" layoutX="18.0" layoutY="72.0" prefHeight="25.0" prefWidth="142.0" promptText="Filter" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="60.0" />
             <ListView fx:id="listView" layoutX="25.0" layoutY="111.0" prefHeight="304.0" prefWidth="142.0" AnchorPane.leftAnchor="15.0" />
          </children>
