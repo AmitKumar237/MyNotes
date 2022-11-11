@@ -1,34 +1,18 @@
 package com.example.mynotes;
 
+import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import javafx.scene.control.ListView;
 
 public class LandingPage
 {
-    public Label userName;
 
-    LandingPage(){
-        System.out.println();
-    }
+    @FXML
+    public Label userTitle;
 
-//    LandingPage(String user) {
-//        try {
-////            String q = "select * from users "+"where userId=?";
-////            PreparedStatement ptstmt = JdbcConnection.con.prepareStatement(q);
-////            ptstmt.setString(1,user);
-////            ResultSet set = ptstmt.executeQuery();
-////
-//            userName.setText(user);
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//    }
 
-    public static void main(String[] args) {
-        System.out.println(" sdlf hfl shfsfhkjs");
+    void setUserTitle(String name){
+        userTitle.setText(name);
     }
 }
 

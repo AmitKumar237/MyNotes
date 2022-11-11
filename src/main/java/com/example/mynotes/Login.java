@@ -2,6 +2,7 @@ package com.example.mynotes;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Hyperlink;
@@ -44,11 +45,20 @@ public class Login {
                 boolean flag = true;
                 while(set.next()){
                     if(set.getString(1).equals(userId) && set.getString(2).equals(userPassword)){
-                        //Redirecting to landingPage
                         flag = false;
-                        Stage st=(Stage)id.getScene().getWindow();
-                        Parent root=FXMLLoader.load(getClass().getResource("landingPage.fxml"));
-                        st.setScene(new Scene(root));
+                        String name = set.getString(3);
+
+                        //Redirecting to landingPage
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("landingPage.fxml"));
+                        Parent root = loader.load();
+
+                        LandingPage landingPage = loader.getController();
+                        landingPage.setUserTitle(name);
+
+                        Stage st=(Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+                        Scene scene = new Scene(root);
+                        st.setScene(scene);
+                        st.show();
                     }
                 }
 
