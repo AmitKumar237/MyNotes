@@ -53,7 +53,7 @@ public class SignUp {
              Parent root = loader.load();
 
              LandingPage landingPage = loader.getController();
-             landingPage.setUserTitle(userName);
+             landingPage.setUserTitle(userName,userId);
 
              Stage st=(Stage)((Node)actionEvent.getSource()).getScene().getWindow();
              Scene scene = new Scene(root);

@@ -53,7 +53,8 @@ public class Login {
                         Parent root = loader.load();
 
                         LandingPage landingPage = loader.getController();
-                        landingPage.setUserTitle(name);
+                        landingPage.setUserTitle(name,userId);
+                        landingPage.setList();
 
                         Stage st=(Stage)((Node)actionEvent.getSource()).getScene().getWindow();
                         Scene scene = new Scene(root);
