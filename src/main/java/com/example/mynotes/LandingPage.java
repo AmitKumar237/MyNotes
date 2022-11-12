@@ -52,6 +52,7 @@ public class LandingPage
     }
 
     public void showContentOfTitle(MouseEvent mouseEvent) {
+        showContent.setText("");
         updateMsg.setText("");
         String title = list.getSelectionModel().getSelectedItem();
         System.out.println(title);
@@ -72,6 +73,8 @@ public class LandingPage
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("createTask.fxml"));
             Parent root = loader.load();
+            CreateTask createTask = loader.getController();
+            createTask.setUserId(userId);
             Stage st=(Stage)((Node)actionEvent.getSource()).getScene().getWindow();
             Scene scene = new Scene(root);
             st.setScene(scene);
@@ -83,11 +86,12 @@ public class LandingPage
 
     public void updateTask(ActionEvent actionEvent) {
         String content = showContent.getText();
-        String q = "update tasks set content = ?"+"where id=?";
+        String q = "update tasks set content = ?"+"where id=? and title=?";
         try{
             PreparedStatement ptsmt = JdbcConnection.con.prepareStatement(q);
             ptsmt.setString(1,content);
             ptsmt.setString(2,userId);
+            ptsmt.setString(3,list.getSelectionModel().getSelectedItem());
             ptsmt.executeUpdate();
             updateMsg.setText("Updated Successfully!");
         }catch (Exception e){

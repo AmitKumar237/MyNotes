@@ -39,7 +39,7 @@
       </Label>
       <HBox alignment="CENTER_LEFT" blendMode="LIGHTEN" prefHeight="49.0" prefWidth="466.0" style="-fx-background-color: transparent;">
          <children>
-            <TextField fx:id="id" promptText="User Id" style="-fx-background-color: transparent; -fx-border-color: #DEDEE4; -fx-border-width: 0px 0px 1px 0px;">
+            <TextField fx:id="id" promptText="User Id" style="-fx-text-inner-color:white; -fx-background-color: transparent; -fx-border-color: #DEDEE4; -fx-border-width: 0px 0px 1px 0px;">
                <effect>
                   <Bloom threshold="0.69" />
                </effect>
@@ -54,7 +54,7 @@
       </HBox>
       <HBox alignment="CENTER_LEFT" blendMode="LIGHTEN" prefHeight="49.0" prefWidth="466.0" style="-fx-background-color: transparent;">
          <children>
-            <TextField fx:id="password" prefHeight="26.0" prefWidth="155.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #DEDEE4; -fx-border-width: 0px 0px 1px 0px;">
+            <TextField fx:id="password" prefHeight="26.0" prefWidth="155.0" promptText="Password" style="-fx-text-inner-color:white; -fx-background-color: transparent; -fx-border-color: #DEDEE4; -fx-border-width: 0px 0px 1px 0px;">
                <effect>
                   <Bloom />
                </effect>
