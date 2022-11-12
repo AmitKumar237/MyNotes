@@ -5,7 +5,9 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
 import java.sql.PreparedStatement;
@@ -17,7 +19,8 @@ public class LandingPage
     @FXML
     public Label userTitle;
     public String userId;
-    public ResultSet set;
+    public TextArea showContent;
+
 
     @FXML
     public ListView<String> list;
@@ -37,19 +40,22 @@ public class LandingPage
             {
               list.getItems().add(set.getString(5));
             }
-            TextField contentArea=new TextField();
-            //contentArea.applyCs
-            list.getSelectionModel().selectedItemProperty().addListener(String selectedItem=list.getSelectionModel().getSelectedItems();
-            contentArea.setText(lk);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 
-
-
-           /* ObservableList<String> title = FXCollections.observableArrayList();
-            while (set.next()){
-                title.add(set.getString(5));
-            }
-            System.out.println(title);
-            list = new ListView<String>(title);*/
+    public void showContentOfTitle(MouseEvent mouseEvent) {
+        String title = list.getSelectionModel().getSelectedItem();
+        System.out.println(title);
+        String q = "select content from tasks "+"where id=? and title=?";
+        try{
+            PreparedStatement ptsmt = JdbcConnection.con.prepareStatement(q);
+            ptsmt.setString(1,userId);
+            ptsmt.setString(2,title);
+            ResultSet set = ptsmt.executeQuery();
+            while (set.next())
+                showContent.setText(set.getString(1));
         }catch (Exception e){
             e.printStackTrace();
         }
