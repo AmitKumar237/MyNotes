@@ -74,7 +74,7 @@ public class LandingPage
             FXMLLoader loader = new FXMLLoader(getClass().getResource("createTask.fxml"));
             Parent root = loader.load();
             CreateTask createTask = loader.getController();
-            createTask.setUserId(userId);
+            createTask.setUserId(userId,userTitle.getText());
             Stage st=(Stage)((Node)actionEvent.getSource()).getScene().getWindow();
             Scene scene = new Scene(root);
             st.setScene(scene);
